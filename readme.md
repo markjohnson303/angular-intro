@@ -12,11 +12,11 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-* Use Bower to require Angular 
-* Initialize Angular in an HTML view to write expressions
-* Organize your code with controllers, passing data to the view
-* Leverage built-in filters & directives
-* Implement two-way data binding
+* **Use** Bower to require Angular 
+* **Initialize** Angular in an HTML view to write expressions
+* **Organize** your code with controllers, passing data to the view
+* **Leverage** built-in filters & directives
+* **Implement** two-way data binding
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -42,9 +42,9 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 
 *Why are we not focusing on [Angular 2](https://github.com/angular/angular) but rather [Angular 1.x](https://github.com/angular/angular.js)?*
 
-* The features offered in Angular 2 are not radically different and community adoption still in progress.
+* The features offered in Angular 2 are not radically different and community adoption is still in progress.
 * (As of the writing of this) Angular 1.x is well supported/active on Github.
-* (As of the writing of this) Angular 2 is in the testing & development, labeled as a "Release Candidate"
+* (As of the writing of this) [Angular 2 is in testing & development](https://splintercode.github.io/is-angular-2-ready/), labeled as a "Release Candidate"
 ![software-dev-cycle](https://upload.wikimedia.org/wikipedia/commons/0/07/Software_dev2.svg)
 * Angular 2 is best to use with [TypeScript](https://www.typescriptlang.org/), making it a recommended prerequisite.
 * Overall, it is much more important to **appreciate the problems** that we are solving on the client-side rather than memorizing specific solutions.
@@ -73,7 +73,7 @@ Create a new file `index.html` and link your html file to angular `<script type=
 
 In your HTML try changing the `<body>` to `<body ng-app>`. This will tell your HTML page to use angular.
 
-Create an empty `app.js` file in your `index.html` and require it in your `<head>` after angular.
+Create an empty `app.js` file in your root folder and require it in your `<head>` after angular.
 
 Let's name our app `ngFun`. To do this we can create an empty angular module.
 
@@ -108,7 +108,7 @@ We can seed our application with some data, but first we have to create a contro
 **app.js**
 
 ```js
-app.controller("PokemonCtrl", function() {
+app.controller("PokemonController", function() {
 	//logic here
 });
 ```
@@ -120,7 +120,7 @@ To use our controller in our View we have to declare it somewhere. Create a new 
 **index.html**
 
 ```html
-<div ng-controller="PokemonCtrl">
+<div ng-controller="PokemonController">
 	<!--placeholder for now-->
 </div>
 ```
@@ -129,12 +129,14 @@ In order to pass data or behavior to our HTML view we need to use the `$scope` o
 
 ![scope](http://devgirl.org/wp-content/uploads/2013/03/concepts-controller.png)
 
-Let's register some Pokemon with `$scope`! In order to user the `$scope` object, we need to explicitly pass it to our controller. This is known as [**dependency injection**](https://docs.angularjs.org/guide/di).
+<!-- How did we do this in Ruby on Rails? -->
+
+Let's register some Pokemon with `$scope`! In order to use the `$scope` object, we need to explicitly pass it to our controller. This is known as [**dependency injection**](https://docs.angularjs.org/guide/di).
 
 **app.js**
 
 ```js
-app.controller("PokemonCtrl", function($scope){
+app.controller("PokemonController", function($scope){
   $scope.pokemon = [
     {
       Ndex: 25,
@@ -170,7 +172,7 @@ Great, now let's see if we can see them in our view by referencing the `pokemon`
 **index.html**
 
 ```html
-<div ng-controller="PokemonCtrl">
+<div ng-controller="PokemonController">
 	<pre>{{ pokemon }}</pre>
 </div>
 ```
@@ -181,7 +183,7 @@ That's cool, but it doesn't look very great. What if we could format our data so
 
 * Use an Angular [filter](https://docs.angularjs.org/guide/filter) to render the data as JSON! Here is a [list](https://docs.angularjs.org/api/ng/filter) of options you can implement.
 
-* Pass a new variable `catchphrase` from the Controller to the View. Set it's value as "gotta catch 'em all!" and use an angular filter to uppercase it in the View.
+* Pass a new variable `catchphrase` from the Controller to the View. Set its value as "gotta catch 'em all!" and use an angular filter to uppercase it in the View.
 
 
 ##Directives
@@ -207,12 +209,12 @@ A few worth introducing:
 
 Our user wants to be able to *input* their name in a field so that the application acknowledges them as the trainer for these Pokemon.
 
-Above our list of Pokemon, but still inside our `PokemonCtrl` `div` tag, let's create an input field for our trainers name.
+Above our list of Pokemon, but still inside our `PokemonController` `div` tag, let's create an input field for our trainers name.
 
 **index.html**
 
 ```html
-  <div ng-controller="PokemonCtrl">
+  <div ng-controller="PokemonController">
   
     <span>Enter your name:</span>
     <input/>
@@ -231,7 +233,7 @@ If we want our input field to map its value to an attribute `name` on a `trainer
 Additionally if we want the value of the `trainer.name` variable to be printed onto our page in an `h1` tag, we can reference it in an expression, such that our HTML looks like:
 
 ```html
-  <div ng-controller="PokemonCtrl">
+  <div ng-controller="PokemonController">
   
     <h1>Trainer: {{trainer.name}}</h1>
     
@@ -258,7 +260,7 @@ Let's say we want to print out an unordered list (`ul`) of many pokemon, where e
 
 ```html
 <ul>
-	<li ng-repeat="pokeman in pokemon">{{poke.name}}</li>
+	<li ng-repeat="poke in pokemon">{{poke.name}}</li>
 </ul>
 ```
 
@@ -268,7 +270,7 @@ Render all the Pokemon into a bootstrap table, where each attribute is a column.
 
 ![pokemon-table](http://i.imgur.com/or1CwF7.png)
 
-Hint: `bower install --save bootstrap-css-only`, use a `table` with the classes `"table table-striped"`.
+Hint: `bower install --save bootstrap-css-only`, use a `table` with the classes `"table table-striped"`.  Don't forget to include Bootstrap in your HTML file either.
 
 ###etc
 
@@ -304,7 +306,7 @@ app.filter('reverse', function() {
 
 ###Challenge
 
-* Create a new column in your table called "Nemesis" and populate it with that pokemon's name reversed. Hint: Don't forget to require your custom filter as a dependency in your controller.
+* Create a new column in your table called "Nemesis" and populate it with that pokemon's name reversed.
 
 ##Pro-tip: Minification in Angular
 
@@ -313,7 +315,7 @@ Remember the main goal in [minification](https://en.wikipedia.org/wiki/Minificat
 However, if you ever minify your angular code when delivering it to a client your variables will be renamed and this may cause problems because of this variable renaming. Currently, we're used to seeing code like this.
 
 ```js
-app.controller("PokemonCtrl", function() {
+app.controller("PokemonController", function() {
   //...
 });
 ```
@@ -321,9 +323,9 @@ app.controller("PokemonCtrl", function() {
 To allow the minifier to rename the function parameters and have them still map to the correct injected services, we need to explicitly `$inject` the parameters we want into our controller as strings, which importantly do not get minified (only variables do).
 
 ```js
-app.controller('PokemonCtrl', PokemonCtrl);
-PokemonCtrl.$inject = ['$scope', 'reverseFilter'];
-function PokemonCtrl($scope, reverseFilter) {
+app.controller('PokemonController', PokemonController);
+PokemonController.$inject = ['$scope'];
+function PokemonController($scope) {
   //...
 };
 ```
@@ -334,6 +336,6 @@ Again, while our parameters will get minified, the strings will not. The names o
 
 ##Our Style Guide
 
-There are many (too many) ways to do the same thing in Angular. As a result it is best for a working-group to define a style-guide amongst themselves in order to define some convention: [here's ours](https://github.com/sf-wdi-29/angular-style-guide/blob/master/README.md).
+There are many (too many) ways to do the same thing in Angular. As a result it is best for a working-group to define a style-guide amongst themselves in order to define some convention: [here's ours](https://github.com/den-wdi-1/angular-style-guide).
 
 Note: It is more important to have working code than to strictly follow the style-guide. Feel free to break the style-guide's convention if the the logic can be defended.
