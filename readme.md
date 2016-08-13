@@ -1,5 +1,9 @@
 ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
+<!--9:00 10 minutes -->
+
+<!--Hook: Raise your hand if you're ready to get back to Javascript.  So today, we're going to dive back into Javascript in a big way.  The goal is two-fold, we want to save you time by intoducing a framework that makes dynamic HTML much easier.  The second part of the goal is to introduce you to the concept that there are tons of these frameworks, and they can all make your lives easier. -->
+
 # Angular
 
 ### Why is this important?
@@ -28,6 +32,8 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 
 [Angular Guide Introduction](https://docs.angularjs.org/guide/introduction)
 
+<!-- Whip-around what is Angular? -->
+
 * A "framework for dynamic web apps"
 * "Lets you use HTML as your template language"
 * Will "extend HTML's syntax"
@@ -50,6 +56,9 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 * Overall, it is much more important to **appreciate the problems** that we are solving on the client-side rather than memorizing specific solutions.
 
 >Other frameworks tackle the same problems (i.e. maintaining state) in different, interesting ways. There is still no "silver-bullet" client-side web framework, but rather a plethora of options each offering a unique perspective and toolset. Some of these technologies include: Ember, React, Redux, Elm, Riot, Backbone, Polymer, etc. [TodoMVC](http://todomvc.com/) is a site that presents examples of a simple "Todo" app written in a number of these technologies helping to compare and contrast them.
+
+<!--9:10 10 minutes -->
+<!-- Half-mast then catchup -->
 
 ##Bower
 
@@ -87,6 +96,8 @@ Now update your `body` element to `<body ng-app="ngFun">`.
 
 Great, we're up and running!
 
+<!--9:20 10 minutes -->
+
 ##Templates & Expressions
 
 Angular creates it's views by templating directly into HTML with expressions. This is its declarative way of building the UI.
@@ -98,6 +109,7 @@ Let's write a regular javascript expression inside double curly brackets, such a
 * Take the string `"hola!"` and call method on it that uppercases all the letters.
 * Take the array `['s','w','e','e','t','n','e','s','s']` and call a method on it that joins all the letters together.
 
+<!--9:30 10 minutes -->
 
 ##Controllers & Scope
 
@@ -185,6 +197,7 @@ That's cool, but it doesn't look very great. What if we could format our data so
 
 * Pass a new variable `catchphrase` from the Controller to the View. Set its value as "gotta catch 'em all!" and use an angular filter to uppercase it in the View.
 
+<!--9:40 10 minutes -->
 
 ##Directives
 
@@ -250,7 +263,9 @@ Additionally if we want the value of the `trainer.name` variable to be printed o
 
 * How could we create a default value for the trainer's name so that when the page loads it is set to `Ash`?
 
-###ng-repeat
+<!--9:50 10 minutes -->
+
+##ng-repeat
 
 `ngRepeat` is a very useful directive for iterating through a collection to render each item.
 
@@ -272,6 +287,8 @@ Render all the Pokemon into a bootstrap table, where each attribute is a column.
 
 Hint: `bower install --save bootstrap-css-only`, use a `table` with the classes `"table table-striped"`.  Don't forget to include Bootstrap in your HTML file either.
 
+<!--10:00 5 minutes -->
+
 ###etc
 
 There are many more directives. For now, know that they exist and why they may be useful. Beyond that, reference the documentation. You can find a comprehensive list [here](https://docs.angularjs.org/api/ng/directive). By now, you should know that looking things up as needed is a better strategy than attempting to memorize everything by heart.
@@ -280,6 +297,8 @@ There are many more directives. For now, know that they exist and why they may b
 
 * Sort the Pokemon by nDex number (hint: look at the built-in angular filters).
 * Create an input tag so that I can search for a particular Pokemon (hint: checkout the `filter` filter in combination with an `ng-model`).
+
+<!--10:05 5 minutes -->
 
 ##Custom Filters
 
@@ -308,6 +327,8 @@ app.filter('reverse', function() {
 
 * Create a new column in your table called "Nemesis" and populate it with that pokemon's name reversed.
 
+<!-- 10:10 5 minutes -->
+
 ##Pro-tip: Minification in Angular
 
 Remember the main goal in [minification](https://en.wikipedia.org/wiki/Minification_(programming)) is to save space and deliver the file quickly. A variable `myVariableName` may be renamed to `a` during minification. A computer doesn't care what the name is as long as they are consistent.
@@ -333,6 +354,8 @@ function PokemonController($scope) {
 Again, while our parameters will get minified, the strings will not. The names of parameters are therefore preserved in the strings so that the injector can still them up as dependencies appropriately.
 
 ![happy pokemon](http://i.giphy.com/3oEduV4SOS9mmmIOkw.gif)
+
+<!--10:15 5 minutes -->
 
 ##Our Style Guide
 
