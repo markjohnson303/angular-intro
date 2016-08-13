@@ -26,7 +26,7 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-* Create dynamic, client-side web applications *without* a framework
+* **Create** dynamic, client-side web applications *without* a framework
 
 ##Prereading Highlights
 
