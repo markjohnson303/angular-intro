@@ -34,6 +34,8 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 
 ##Prereading Highlights
 
+<!-- Poll class - big takeaways from weekend's HW and basics on Angular.  Things they liked?  Didn't like? -->
+
 [Angular Guide Introduction](https://docs.angularjs.org/guide/introduction)
 
 <!-- Whip-around what is Angular? -->
