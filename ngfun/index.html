@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Poketroller</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-css-only/css/bootstrap.css">
+</head>
+<body ng-app="ngFun">
+
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+	<div ng-controller="PokemonController">
+		<h1>{{ catchphrase | uppercase }}</h1>
+		<h1>Trainer: {{trainer.name || "Ash"}}</h1>
+		<span >Enter your name:</span>
+	    <input ng-model="trainer.name" />
+	    <span >Find a poke:</span>
+	    <input ng-model="pokeSearch.name" />
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Ndex</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Nemesis</th>
+				</tr>
+			</thead>
+		    <tr ng-repeat="poke in pokemon | orderBy:'Ndex' | filter:pokeSearch.name ">
+		    	<td> {{ poke.Ndex }} </td>
+		    	<td>{{poke.name}}</td>
+		    	<td> {{poke.type}} </td>
+		    	<td> {{ poke.name | reverse }} </td>
+		    </tr>
+		</table>
+	</div>
+
+
+</body>
+</html>
