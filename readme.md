@@ -28,6 +28,10 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 
 * **Create** dynamic, client-side web applications *without* a framework
 
+## A Little Background
+
+**AngularJS** is a Javascript-based, open-source, front-end framework maintained by Google and a community of individuals and corporations.  It was first released in 2010, and is currently going through a major transition from Angular 1.x to Angular 2.x.
+
 ##Prereading Highlights
 
 [Angular Guide Introduction](https://docs.angularjs.org/guide/introduction)
@@ -56,6 +60,8 @@ Angular extends HTML with its declarative syntax to create dynamic, client-side 
 * Overall, it is much more important to **appreciate the problems** that we are solving on the client-side rather than memorizing specific solutions.
 
 >Other frameworks tackle the same problems (i.e. maintaining state) in different, interesting ways. There is still no "silver-bullet" client-side web framework, but rather a plethora of options each offering a unique perspective and toolset. Some of these technologies include: Ember, React, Redux, Elm, Riot, Backbone, Polymer, etc. [TodoMVC](http://todomvc.com/) is a site that presents examples of a simple "Todo" app written in a number of these technologies helping to compare and contrast them.
+
+<!--"Front-end development is a dumpster fire" -Adventures in Angular-->
 
 <!--9:10 10 minutes -->
 <!-- Half-mast then catchup -->
@@ -96,17 +102,23 @@ Now update your `body` element to `<body ng-app="ngFun">`.
 
 Great, we're up and running!
 
+<!--Briefly walk through files in directory -->
+
+<!-- Catch-phrase with Model, View, Controller -->
+
 <!--9:20 10 minutes -->
 
 ##Templates & Expressions
 
-Angular creates it's views by templating directly into HTML with expressions. This is its declarative way of building the UI.
+Angular creates its views by templating directly into HTML with expressions. This is its declarative way of building the UI.
 
 Let's write a regular javascript expression inside double curly brackets, such as: `{{ __someExpression__ }}` and see what your HTML evaluates to, for example: `{{ 4 * 4 }} `.
 
+<!--Break and explain the rest of the changes will either be in app.js OR in index.html -->
+
 ###Challenge
 
-* Take the string `"hola!"` and call method on it that uppercases all the letters.
+* Take the string `"hola!"` and call a method on it that uppercases all the letters.
 * Take the array `['s','w','e','e','t','n','e','s','s']` and call a method on it that joins all the letters together.
 
 <!--9:30 10 minutes -->
